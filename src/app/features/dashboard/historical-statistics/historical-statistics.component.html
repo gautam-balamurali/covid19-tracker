@@ -1,0 +1,32 @@
+<div class="history">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <h2>Historical Statistics Of Cases On Monthly Basis in 2022</h2>
+  </div>
+
+  <div
+    *ngIf="historicalMonthlyData.length && !loader"
+    class="month-main"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10"
+  >
+    <mat-card
+      fxFlex
+      fxFlex.gt-md="25"
+      *ngFor="let data of historicalMonthlyData"
+      class="main-card"
+    >
+      <mat-card-title-group>
+        <mat-card-title> {{ data.value | number }}</mat-card-title>
+      </mat-card-title-group>
+      <mat-card-content>
+        {{ data.month | monthName }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="!historicalMonthlyData.length || loader">
+    <ngx-skeleton-loader
+      [theme]="{ width: '100%', height: '100px' }"
+    ></ngx-skeleton-loader>
+  </div>
+</div>

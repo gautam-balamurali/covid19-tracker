@@ -1,0 +1,25 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <!-- Map -->
+  <div fxFlex="100" fxFlex.gt-md="50" class="card-body-map">
+    <h2>Worldwide Map Of Covid-19 Affected Countries</h2>
+    <google-chart
+      *ngIf="chartsReady"
+      style="width: 100%"
+      [data]="geoChart"
+    ></google-chart>
+    <ngx-skeleton-loader
+      *ngIf="!chartsReady"
+      [theme]="{ width: '600px', height: '500px' }"
+    ></ngx-skeleton-loader>
+  </div>
+
+  <!-- Pie Chart -->
+  <div fxFlex="100" fxFlex.gt-md="50" class="card-body">
+    <h2>Statistical Chart Based On Total Number Of Covid-19 Cases</h2>
+    <google-chart *ngIf="chartsReady" [data]="pieChart"></google-chart>
+    <ngx-skeleton-loader
+      *ngIf="!chartsReady"
+      [theme]="{ width: '600px', height: '500px' }"
+    ></ngx-skeleton-loader>
+  </div>
+</div>

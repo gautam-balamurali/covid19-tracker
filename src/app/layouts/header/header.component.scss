@@ -1,0 +1,20 @@
+.header-fixed {
+  position: fixed;
+  z-index: 999;
+}
+
+.header-hidden {
+  visibility: hidden;
+}
+
+.logo {
+  height: 45px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  cursor: pointer;
+}

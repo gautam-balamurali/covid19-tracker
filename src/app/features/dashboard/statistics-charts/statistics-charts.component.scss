@@ -1,0 +1,21 @@
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.card-body-map {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 998;
+}
+
+google-chart {
+  cursor: pointer;
+}
+
+h2 {
+  color: #3f51b5;
+  font-weight: bolder;
+}

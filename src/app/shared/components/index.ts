@@ -1,0 +1,1 @@
+export * from './search-list/search-list.component';

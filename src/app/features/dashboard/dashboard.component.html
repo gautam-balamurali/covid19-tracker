@@ -1,0 +1,22 @@
+<div class="dashboard">
+  <!-- Countries List Dropdown Begins -->
+  <app-countries-list-dropdown
+    #countriesListDropdown
+    (onCountryChange)="countryChange($event)"
+  ></app-countries-list-dropdown>
+  <!-- Countries List Dropdown Ends -->
+
+  <!-- Statistical Charts Begins -->
+  <app-statistics-charts
+    #statisticsCharts
+    [(chartsReady)]="chartsReady"
+  ></app-statistics-charts>
+  <!-- Statistical Charts Ends -->
+
+  <!-- Historical Statistics Begins -->
+  <app-historical-statistics
+    #historicalStatistics
+    [(chartsReady)]="chartsReady"
+  ></app-historical-statistics>
+  <!-- Historical Statistics Ends -->
+</div>
