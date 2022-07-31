@@ -1,10 +1,18 @@
 import { Platform } from '@angular/cdk/platform';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GoogleChartInterface, GoogleChartType } from 'ng2-google-charts';
 import { Subscription } from 'rxjs';
 import { DashboardConfig, GlobalConfig } from 'src/app/config/app.config';
 import { DashboardService } from 'src/app/core';
+import { DashboardContentModel } from 'src/app/models';
 
 /**
  * StatisticsChartsComponent component to display statistics charts and maps
@@ -14,8 +22,9 @@ import { DashboardService } from 'src/app/core';
   templateUrl: './statistics-charts.component.html',
   styleUrls: ['./statistics-charts.component.scss'],
 })
-export class StatisticsChartsComponent implements OnInit {
+export class StatisticsChartsComponent implements OnInit, OnDestroy {
   @Input() chartsReady: boolean = false;
+  @Input() content: DashboardContentModel;
   @Output() chartsReadyChange = new EventEmitter<boolean>();
 
   geoChart: GoogleChartInterface = {
@@ -94,5 +103,9 @@ export class StatisticsChartsComponent implements OnInit {
     this.chartsReadyChange.emit(this.chartsReady);
     this._snackBar.open(GlobalConfig.SnackBarErrorMessage);
     console.error(error);
+  }
+
+  ngOnDestroy(): void {
+    this.dashboardServiceSubscription?.unsubscribe();
   }
 }

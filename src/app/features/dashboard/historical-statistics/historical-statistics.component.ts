@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
 import { GlobalConfig } from 'src/app/config/app.config';
 import { DashboardService } from 'src/app/core';
-import { HistoricalMonthType } from 'src/app/models';
+import { DashboardContentModel, HistoricalMonthType } from 'src/app/models';
 
 /**
  * HistoricalStatisticsComponent component to display history statistics
@@ -15,6 +15,7 @@ import { HistoricalMonthType } from 'src/app/models';
 })
 export class HistoricalStatisticsComponent implements OnInit {
   @Input() chartsReady: boolean = false;
+  @Input() content: DashboardContentModel;
   @Output() chartsReadyChange = new EventEmitter<boolean>();
 
   historicalMonthlyData: HistoricalMonthType[] = [];
@@ -87,5 +88,9 @@ export class HistoricalStatisticsComponent implements OnInit {
     this.loader = false;
     this._snackBar.open(GlobalConfig.SnackBarErrorMessage);
     console.error(error);
+  }
+
+  ngOnDestroy(): void {
+    this.dashboardServiceSubscription?.unsubscribe();
   }
 }

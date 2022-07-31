@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
 import { DashboardConfig, GlobalConfig } from 'src/app/config/app.config';
 import { CacheService, DashboardService } from 'src/app/core';
+import { DashboardContentModel } from 'src/app/models';
 
 /**
  * CountriesListDropdownComponent component to display countries list dropdown with search option
@@ -13,6 +14,7 @@ import { CacheService, DashboardService } from 'src/app/core';
   styleUrls: ['./countries-list-dropdown.component.scss'],
 })
 export class CountriesListDropdownComponent implements OnInit {
+  @Input() content: DashboardContentModel;
   @Output() onCountryChange = new EventEmitter<string>();
 
   countries: string[] = [];
@@ -74,5 +76,9 @@ export class CountriesListDropdownComponent implements OnInit {
   showSnackBar(error) {
     this._snackBar.open(GlobalConfig.SnackBarErrorMessage);
     console.error(error);
+  }
+
+  ngOnDestroy(): void {
+    this.dashboardServiceSubscription?.unsubscribe();
   }
 }

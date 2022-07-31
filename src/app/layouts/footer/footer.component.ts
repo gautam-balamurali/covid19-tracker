@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { LayoutsContentModel } from 'src/app/models';
 
 /**
  * FooterComponent component to render footer
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  @Input() content: LayoutsContentModel;
+
   constructor() {}
 
   ngOnInit(): void {}

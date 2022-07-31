@@ -1,7 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
   <!-- Map -->
   <div fxFlex="100" fxFlex.gt-md="50" class="card-body-map">
-    <h2>Worldwide Map Of Covid-19 Affected Countries</h2>
+    <h2>{{ content?.statistics_charts_map_title }}</h2>
     <google-chart
       *ngIf="chartsReady"
       style="width: 100%"
@@ -15,7 +15,7 @@
 
   <!-- Pie Chart -->
   <div fxFlex="100" fxFlex.gt-md="50" class="card-body">
-    <h2>Statistical Chart Based On Total Number Of Covid-19 Cases</h2>
+    <h2>{{ content?.statistics_charts_pie_chart_title }}</h2>
     <google-chart *ngIf="chartsReady" [data]="pieChart"></google-chart>
     <ngx-skeleton-loader
       *ngIf="!chartsReady"
