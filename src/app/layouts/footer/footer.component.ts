@@ -12,6 +12,8 @@ import { LayoutsContentModel } from 'src/app/models';
 export class FooterComponent implements OnInit {
   @Input() content: LayoutsContentModel;
 
+  currentYear: number = new Date().getFullYear();
+
   constructor() {}
 
   ngOnInit(): void {}

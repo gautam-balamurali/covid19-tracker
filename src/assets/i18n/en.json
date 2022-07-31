@@ -10,6 +10,6 @@
   },
   "layouts": {
     "header_label": "Covid-19 Tracker",
-    "footer_label": "Copyright © 2022, Gautam Balamurali"
+    "footer_label": "Copyright © {{year}}, Gautam Balamurali"
   }
 }
