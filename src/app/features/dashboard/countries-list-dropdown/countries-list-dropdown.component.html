@@ -1,7 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="start center">
   <div fxFlex="100" fxFlex.gt-md="40">
     <app-search-list
-      [label]="'Select Country'"
+      [label]="content?.select_country_label"
       [placeholder]="''"
       [options]="countries"
       (onOptionChange)="countryChange($event)"

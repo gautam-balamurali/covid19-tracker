@@ -9,6 +9,7 @@ import {
   HeaderComponent,
   MainComponent,
 } from '.';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import {
     FooterComponent,
     MainComponent,
   ],
-  imports: [CommonModule, RouterModule, DependenciesModule],
+  imports: [CommonModule, RouterModule, DependenciesModule, SharedModule],
 })
 export class LayoutsModule {}

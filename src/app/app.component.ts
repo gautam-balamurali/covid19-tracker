@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * AppComponent component is the root component
@@ -10,4 +11,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covid19-tracker';
+
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
 }

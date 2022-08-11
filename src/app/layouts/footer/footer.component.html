@@ -1,3 +1,7 @@
 <mat-toolbar class="footer">
-  <span>Copyright © 2022, Gautam Balamurali</span>
+  <span
+    [innerHtml]="
+      content?.footer_label | formatString: { year: currentYear }:true
+    "
+  ></span>
 </mat-toolbar>

@@ -1,0 +1,15 @@
+{
+  "dashboard": {
+    "select_country_label": "Select Country",
+    "historical_statistics_title": "Historical Statistics Of Cases On Monthly Basis in 2022",
+    "statistics_charts_map_title": "Worldwide Map Of Covid-19 Affected Countries",
+    "statistics_charts_pie_chart_title": "Statistical Chart Based On Total Number Of Covid-19 Cases"
+  },
+  "unauthorized": {
+    "unauthorized_status_code": "401"
+  },
+  "layouts": {
+    "header_label": "Covid-19 Tracker",
+    "footer_label": "Copyright © {{year}}, Gautam Balamurali"
+  }
+}

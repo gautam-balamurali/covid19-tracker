@@ -2,6 +2,7 @@
   <!-- Countries List Dropdown Begins -->
   <app-countries-list-dropdown
     #countriesListDropdown
+    [content]="content"
     (onCountryChange)="countryChange($event)"
   ></app-countries-list-dropdown>
   <!-- Countries List Dropdown Ends -->
@@ -9,6 +10,7 @@
   <!-- Statistical Charts Begins -->
   <app-statistics-charts
     #statisticsCharts
+    [content]="content"
     [(chartsReady)]="chartsReady"
   ></app-statistics-charts>
   <!-- Statistical Charts Ends -->
@@ -16,6 +18,7 @@
   <!-- Historical Statistics Begins -->
   <app-historical-statistics
     #historicalStatistics
+    [content]="content"
     [(chartsReady)]="chartsReady"
   ></app-historical-statistics>
   <!-- Historical Statistics Ends -->
